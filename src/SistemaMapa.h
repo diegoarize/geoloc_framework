@@ -7,7 +7,7 @@
 
 class Sistema_Mapa { 
 public :
-	std::list<Pin>  &listarPins();
+    std::list<Pin>  &listarPins();
 	Pin  buscarPin(const std::string &id) const;
 	void  cadastrarPin(const FormularioDoPin &formulario);
 	void  criarFormulario(usuario us);
