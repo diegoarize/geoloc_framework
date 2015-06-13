@@ -9,7 +9,8 @@ using namespace std;
 
 class Sistema_Mapa { 
 public :
-    std::list<Pin>  &listarPins();
+	static Sistema_Mapa instance; //Singleton
+    list<Pin>  &listarPins();
 	Pin  buscarPin(const std::string &id) const;
 	void  cadastrarPin(const FormularioDoPin &formulario);
 	void  criarFormulario(usuario us);
