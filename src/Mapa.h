@@ -2,6 +2,7 @@
 
 #define MAPA_H
 #include <list>
+#include "Pin.h"
 
 class Mapa {
 public  :

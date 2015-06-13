@@ -1,6 +1,6 @@
 #include "Mapa.h"
 
-Mapa::void inserirPin(const Pin pin)
+void Mapa::inserirPin(const Pin pin)
 {
-    pins.push_back(pin);
+    pinList.push_back(pin);
 }

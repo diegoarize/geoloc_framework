@@ -76,8 +76,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\src\Conteudo.h" />
+    <ClInclude Include="..\..\..\src\EstadoPin.h" />
+    <ClInclude Include="..\..\..\src\EstrategiaDeValidacao.h" />
+    <ClInclude Include="..\..\..\src\ExibidorDeRel.h" />
+    <ClInclude Include="..\..\..\src\FormularioDoPin.h" />
+    <ClInclude Include="..\..\..\src\Mapa.h" />
+    <ClInclude Include="..\..\..\src\Pin.h" />
+    <ClInclude Include="..\..\..\src\Relatorio.h" />
     <ClInclude Include="..\..\..\src\SistemaMapa.h" />
     <ClInclude Include="..\..\..\src\Usuario.h" />
+    <ClInclude Include="..\..\..\src\ValidadorDoPin.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\EstrategiaDeValidacao.cpp" />
+    <ClCompile Include="..\..\..\src\Mapa.cpp" />
+    <ClCompile Include="..\..\..\src\SistemaMapa.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
