@@ -5,6 +5,8 @@
 #include <iostream>
 #include <list>
 
+using namespace std;
+
 class Sistema_Mapa { 
 public :
     std::list<Pin>  &listarPins();
@@ -13,12 +15,15 @@ public :
 	void  criarFormulario(usuario us);
 	void  exibirRelatorio();
     FormularioDoPin gerarFormulario();
+	string getIp();
+	void setIp(string ip);
 private:
     ValidadorDoPin    validador;
     SistemaMapa       sistMapa;
     Mapa              mapa;
     Relatorio         relatorio;
     bool  			  validadorDoPin(const FormularioDoPin &formulario);
+	string			  ip;
      		  
 }
 
