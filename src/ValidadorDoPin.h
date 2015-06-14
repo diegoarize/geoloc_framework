@@ -4,6 +4,6 @@
 //Interface do pattern strategy
 class  ValidadorDoPin {
 public:
-    virtual void validarPin(FormularioDoPin formPin) = 0;//pure-virtual
+    virtual bool validarPin(FormularioDoPin formPin) = 0;//pure-virtual
 };
 #endif
