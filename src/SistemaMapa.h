@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <list>
+#include "FormularioDoPin.h"
 
 using namespace std;
 
