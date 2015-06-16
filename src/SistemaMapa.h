@@ -5,6 +5,7 @@
 #include <iostream>
 #include <list>
 #include "FormularioDoPin.h"
+#include "ValidadorDoPin.h"
 
 using namespace std;
 

@@ -29,5 +29,5 @@ void SistemaMapa::cadastrarPin(const FormularioDoPin &formulario)
 
 bool SistemaMapa::validadorDoPin(const FormularioDoPin &formulario)
 {
-	
+	return validador.validarPin(formulario);
 }

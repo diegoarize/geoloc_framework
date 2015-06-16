@@ -16,7 +16,7 @@ public:
 	EstrategiaDeValidacao() {
 		contadorPinsDia = 0;
 	}
-    virtual bool validarPin(FormularioDoPin formPin);
+    virtual bool validarPin(const FormularioDoPin &formPin);
 
 private:
 	list<string> logList; //cada item da lista: "yyyy-mm-dd"

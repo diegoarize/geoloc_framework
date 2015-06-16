@@ -1,7 +1,7 @@
 #include "EstrategiaDeValidacao.h"
 
 //Implementação da classe
-bool EstrategiaDeValidacao::validarPin(FormularioDoPin formPin)
+bool EstrategiaDeValidacao::validarPin(const FormularioDoPin &formPin)
 {
 	//TODO: Validar Pin somente se o numero de inserções for <=5 em um dia, verificando log.
 	if (contadorPinsDia < 5)
