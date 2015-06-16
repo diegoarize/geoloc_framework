@@ -18,8 +18,8 @@ public :
 	void  criarFormulario(usuario us);
 	void  exibirRelatorio();
     FormularioDoPin gerarFormulario();
-	string getIp();
-	void setIp(string ip);
+    string getIp() const  { return ip;}
+    void setIp(const string &nIp) { ip = nIp;}
 private:
     ValidadorDoPin    validador;
     SistemaMapa       sistMapa;
