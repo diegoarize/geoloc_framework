@@ -16,9 +16,13 @@ void Sistema_Mapa::cadastrarPin(const FormularioDoPin &formulario)
 {
 	//TODO: Implementar parte pré validação
 
-	//TODO: Validar o pin
+	if(validadorDoPin(formulario)) {
+		//TODO: Finalizar cadastro se válido
+	} else {
+		//TODO: Caso contrário retornar erro.
+	}
 
-	//TODO: Finalizar cadastro se válido
+	
 
-	//TODO: Caso contrário retornar erro.
+	
 }
