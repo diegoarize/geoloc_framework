@@ -2,17 +2,17 @@
 
 using namespace std;
 
-string Sistema_Mapa::getIp()
+string SistemaMapa::getIp()
 {
 	return ip;
 }
 
-void Sistema_Mapa::setIp(string ip)
+void SistemaMapa::setIp(string ip)
 {
-	Sistema_Mapa::ip = ip;
+	SistemaMapa::ip = ip;
 }
 
-void Sistema_Mapa::cadastrarPin(const FormularioDoPin &formulario)
+void SistemaMapa::cadastrarPin(const FormularioDoPin &formulario)
 {
 	//TODO: Implementar parte pré validação
 
@@ -24,5 +24,10 @@ void Sistema_Mapa::cadastrarPin(const FormularioDoPin &formulario)
 
 	
 
+	
+}
+
+bool SistemaMapa::validadorDoPin(const FormularioDoPin &formulario)
+{
 	
 }
