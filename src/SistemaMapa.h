@@ -6,25 +6,26 @@
 #include <list>
 #include "FormularioDoPin.h"
 #include "ValidadorDoPin.h"
+#include "Pin.h"
 
 using namespace std;
 
-class SistemaMapa { 
+class SistemaMapa {
+
 public :
 	//TODO: Criar um metodo main pra ser o inicializador da aplicação(talvez numa classe main)
 	//e isso instancia o Singleton e faz chamadas de input
-	static Sistema_Mapa instance; //Singleton
+	static SistemaMapa instance; //Singleton
     list<Pin>  &listarPins();
 	Pin  buscarPin(const std::string &id) const;
 	void  cadastrarPin(const FormularioDoPin &formulario);
 	void  criarFormulario(usuario us);
 	void  exibirRelatorio();
     FormularioDoPin gerarFormulario();
-	string getIp();
-	void setIp(string ip);
+    string getIp() const  { return ip;}
+    void setIp(const string &nIp) { ip = nIp;}
 private:
     ValidadorDoPin    validador;
-    SistemaMapa       sistMapa;
     Mapa              mapa;
     Relatorio         relatorio;
     bool  			  validadorDoPin(const FormularioDoPin &formulario);
