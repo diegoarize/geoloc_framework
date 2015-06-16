@@ -16,13 +16,16 @@ public :
     int       getDuracao()   const  {  return duracao;   }
     const int *getCor()      const  {  return std::cbegin(cor); }
     
+    void      setLatitude(double lat)  { latitude  = lat; }
+    void      setLongitude(double lon) { longitude = lon; }
+    
 private :
-    int     pinId      =  0;
-    double  latitude   =  0.0;
-    double  longitude  =  0.0;
-    int     cor[3];
-    int     tamanho    =  0;
-    int     duracao    =  0;
+    std::string pinId;
+    double      latitude   =  0.0;
+    double      longitude  =  0.0;
+    int         cor[3];
+    int         tamanho    =  0;
+    int         duracao    =  0;
 }
 
 

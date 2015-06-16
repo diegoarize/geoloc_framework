@@ -17,7 +17,6 @@ public :
 	//e isso instancia o Singleton e faz chamadas de input
 	static SistemaMapa instance; //Singleton
     list<Pin>  &listarPins();
-	Pin  buscarPin(const std::string &id) const;
 	void  cadastrarPin(const FormularioDoPin &formulario);
 	void  criarFormulario(usuario us);
 	void  exibirRelatorio();

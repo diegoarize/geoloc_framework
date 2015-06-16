@@ -16,7 +16,8 @@ public  :
     double    getCLatitude()  const { return centerLatitude; }
     double    getCLongitude() const { return centerLongitude; }
     int       getZoom()       const { return zoom; }
-    list<Pin> getPins()       const { return pinList; }
+    list<Pin> getListaPins()  const { return pinList; }
+    list<Pin>::const_iterator  getPin(const std::string &pinId) const;
     
 private :
     int        titulo = 0;
