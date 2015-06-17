@@ -15,7 +15,6 @@ class SistemaMapa {
 public :
 	//TODO: Criar um metodo main pra ser o inicializador da aplicação(talvez numa classe main)
 	//e isso instancia o Singleton e faz chamadas de input
-	static SistemaMapa instance; //Singleton
     list<Pin>  &listarPins();
 	void  cadastrarPin(const FormularioDoPin &formulario);
 	void  criarFormulario(usuario us);
@@ -23,7 +22,18 @@ public :
     FormularioDoPin gerarFormulario();
     string getIp() const  { return ip;}
     void setIp(const string &nIp) { ip = nIp;}
+
+    // sigleton
+    static SistemaMapa& getInstance()
+    {
+        static SistemaMapa  instance;
+        return instance;
+    }
 private:
+    SistemaMapa() {}
+    SistemaMapa(SistemaMapa const&);     // Nao implementa
+    void operator=(SistemaMapa const&); //Nao implementa
+    
     ValidadorDoPin    validador;
     Mapa              mapa;
     Relatorio         relatorio;
