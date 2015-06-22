@@ -1,10 +1,11 @@
 #ifndef  FORMULATIO_DO_PIN_H
+#include "Usuario.h"
+#include "Pin.h"
 
 #define  FORMULATIO_DO_PIN_H
 class FormularioDoPin {
 public :
-    virtual Usuario      obterUsuario()  const ;
-    virtual std::string  obterConteudo() const ;
+    virtual Pin  criarPin(const Usuario &u) ;
 }
 
 #endif

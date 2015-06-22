@@ -16,13 +16,12 @@ public :
 	//TODO: Criar um metodo main pra ser o inicializador da aplicação(talvez numa classe main)
 	//e isso instancia o Singleton e faz chamadas de input
     list<Pin>  &listarPins();
-	void  cadastrarPin(const FormularioDoPin &formulario);
-	void  criarFormulario(usuario us);
+    void  adicionarUsuario(Usuario u);
+    bool  cadastrarPin(const Pin &pin);
 	void  exibirRelatorio();
     FormularioDoPin gerarFormulario();
-    string getIp() const  { return ip;}
-    void setIp(const string &nIp) { ip = nIp;}
-
+    Mapa getMapa() const { return mapa;}|
+    list<Usuario> &getUsuarios() { return lista_usuario; }
     // sigleton
     static SistemaMapa& getInstance()
     {
@@ -34,12 +33,12 @@ private:
     SistemaMapa(SistemaMapa const&);     // Nao implementa
     void operator=(SistemaMapa const&); //Nao implementa
     
+    list<Usuario>     listaUsuario;
     ValidadorDoPin    validador;
     Mapa              mapa;
     Relatorio         relatorio;
     bool  			  validadorDoPin(const FormularioDoPin &formulario);
-	string			  ip;
-     		  
+    
 }
 
 #endif
