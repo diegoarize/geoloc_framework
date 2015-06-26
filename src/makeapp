@@ -1,0 +1,6 @@
+App : application.o  EstrategiaDeValidacao.o  SistemaMapa.o Relatorio.h
+	g++ -std=c++0x -o  App application.o EstrategiaDeValidacao.o SistemaMapa.o
+application.o: application.cpp EstrategiaDeValidacao.o  RelatorioApp.h application.h PinApp.h EstrategiaDeValidacao.h Relatorio.h SistemaMapa.h Usuario.h
+	g++ -std=c++0x -c application.cpp
+EstrategiaDeValidacao.o: EstrategiaDeValidacao.cpp EstrategiaDeValidacao.h ValidadorDoPin.h Pin.h
+	g++ -std=c++0x -c EstrategiaDeValidacao.cpp

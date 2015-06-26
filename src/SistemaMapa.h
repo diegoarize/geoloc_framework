@@ -4,41 +4,47 @@
 #include <string>
 #include <iostream>
 #include <list>
-#include "FormularioDoPin.h"
 #include "ValidadorDoPin.h"
 #include "Pin.h"
+#include "Usuario.h"
+#include "Relatorio.h"
+#include "Mapa.h"
 
 using namespace std;
 
 class SistemaMapa {
-
-public :
-	//TODO: Criar um metodo main pra ser o inicializador da aplicaÁ„o(talvez numa classe main)
-	//e isso instancia o Singleton e faz chamadas de input
+    
+    public :
+    //TODO: Criar um metodo main pra ser o inicializador da aplicação(talvez numa classe main)
+    //e isso instancia o Singleton e faz chamadas de input
     list<Pin>  &listarPins();
-    void  adicionarUsuario(Usuario u);
+    void  adicionarUsuario(const Usuario &u);
     bool  cadastrarPin(const Pin &pin);
-	void  exibirRelatorio();
-    FormularioDoPin gerarFormulario();
-    Mapa getMapa() const { return mapa;}|
-    list<Usuario> &getUsuarios() { return lista_usuario; }
+    void  exibirRelatorio();
+    Mapa getMapa() const { return mapa;}
+    list<Usuario> &getUsuarios() { return listaUsuario; }
     // sigleton
     static SistemaMapa& getInstance()
     {
         static SistemaMapa  instance;
         return instance;
     }
+    
+    //inicializadores
+    void setValidador(ValidadorDoPin *v);
+    void setRelatorio(Relatorio *r);
+    
 private:
-    SistemaMapa() {}
-    SistemaMapa(SistemaMapa const&);     // Nao implementa
-    void operator=(SistemaMapa const&); //Nao implementa
+    SistemaMapa() {};
+   // SistemaMapa(SistemaMapa const&);     // Nao implementa
+   // void operator=(SistemaMapa const&); //Nao implementa
     
-    list<Usuario>     listaUsuario;
-    ValidadorDoPin    validador;
+    std::list<Usuario>     listaUsuario;
+    ValidadorDoPin    *validador;
     Mapa              mapa;
-    Relatorio         relatorio;
-    bool  			  validadorDoPin(const FormularioDoPin &formulario);
+    Relatorio         *relatorio;
+    bool  			  validadorDoPin(const Pin &formulario);
     
-}
+};
 
 #endif

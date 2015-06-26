@@ -6,11 +6,11 @@ void Mapa::inserirPin(const Pin &pin)
 }
 
 
-list<Pin>::const_iterator Mapa::getPin(const string &pinId) const
+std::list<Pin>::const_iterator Mapa::getPin(const std::string &pinId) const
 {
-    list<Pin>::const_iterator lb, le;
+    std::list<Pin>::const_iterator lb, le;
     
-    for (lb = pinsList.cbegin(), le = pinsList.cend(); lb != le && lb -> getId() != pinId; ++lb)
+    for (lb = pinList.cbegin(), le = pinList.cend(); lb != le && lb -> getId() != pinId; ++lb)
         ;
     return lb;
     

@@ -1,0 +1,4 @@
+SistemaMapa.o: SistemaMapa.cpp SistemaMapa.h Mapa.o  ValidadorDoPin.h Pin.h  Usuario.h  Relatorio.h
+	g++ -std=c++0x -c SistemaMapa.cpp Mapa.o 
+Mapa.o:  Mapa.cpp Mapa.h Pin.h
+	g++ -std=c++0x -c Mapa.cpp 

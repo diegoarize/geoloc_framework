@@ -1,5 +1,6 @@
 #ifndef ESTRATEGIA_DE_VALIDACAO
 #include "ValidadorDoPin.h"
+#include "Pin.h"
 #include <string>
 #include <fstream>
 #include <streambuf>
@@ -16,7 +17,7 @@ public:
 	EstrategiaDeValidacao() {
 		contadorPinsDia = 0;
 	}
-    virtual bool validarPin(const FormularioDoPin &formPin);
+    virtual bool validarPin(const Pin &pin);
 
 private:
 	list<string> logList; //cada item da lista: "yyyy-mm-dd"

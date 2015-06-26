@@ -6,11 +6,11 @@ class Relatorio {
 public :
     Relatorio() = default;
     std::string gerarRelatorio()    const ;
-    virtual void exibirRelatorio()  const;
+    virtual void exibirRelatorio()  const {};
 private :
-    list<ExibidorDeRel> filtros;
+    std::list<Relatorio> filtros;
 
-}
+};
 
 
 #endif

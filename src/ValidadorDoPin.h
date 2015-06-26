@@ -1,9 +1,10 @@
 #ifndef VALIDADOR_DO_PIN_H
-#include "FormularioDoPin.h"
+#define VALIDADOR_DO_PIN_H
+#include "Pin.h"
 //Interface Validador do Pin
 //Interface do pattern strategy
 class  ValidadorDoPin {
 public:
-    virtual bool validarPin(const FormularioDoPin &formPin) = 0;//pure-virtual
+    virtual bool validarPin(const Pin &pin) = 0;//pure-virtual
 };
 #endif
