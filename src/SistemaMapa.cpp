@@ -16,11 +16,13 @@ bool SistemaMapa::cadastrarPin(const Pin &pin)
     if(validador -> validarPin(pin)) {
         
         // aqui precisamos das informacoes do usuario que cadastrou este pin!
-        //TODO: Finalizar cadastro se v?lido
+        //TODO: Mostrar id do pin cadastrado
+		cout << "Pin cadastrado" << endl;
         return true;
     }
     else {
-        //cout <<
+		//TODO: Mostrar id do pin cadastrado
+		cout << "Pin nao cadastrado" << endl;
         //TODO: Caso contr?rio retornar erro.
         return false;
     }

@@ -20,13 +20,16 @@ bool EstrategiaDeValidacao::validarPin(const Pin &pin)
 		string anoMes = str.substr(0,index);
 		string dia = str.substr(index+1);
 
-		for(list<string>::iterator it; it != logList.end(); it++) {
-			size_t found = it->find(anoMes);
-			if (found!=string::npos) {
-				//se encontrou verifica o dia
-				size_t i= str.find_last_of("-");
-				if(dia.compare(it->substr(i+1)) == 0) {
-					contadorPinsDia++;
+		if (!logList.empty())
+		{
+			for (list<string>::iterator it; it != logList.end(); it++) {
+				size_t found = it->find(anoMes);
+				if (found != string::npos) {
+					//se encontrou verifica o dia
+					size_t i = str.find_last_of("-");
+					if (dia.compare(it->substr(i + 1)) == 0) {
+						contadorPinsDia++;
+					}
 				}
 			}
 		}
