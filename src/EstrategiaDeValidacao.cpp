@@ -15,27 +15,26 @@ bool EstrategiaDeValidacao::validarPin(const Pin &pin)
 
 		strftime(buf, sizeof(buf), "%F", &tstruct); //yyyy-mm-dd
 		//TODO: transformar em função do util
-		string str = buf;
-		size_t index= str.find_last_of("-");
-		string anoMes = str.substr(0,index);
-		string dia = str.substr(index+1);
+		string dia = buf;
+		
 
 		if (!logList.empty())
 		{
-			for (list<string>::iterator it; it != logList.end(); it++) {
-				size_t found = it->find(anoMes);
-				if (found != string::npos) {
-					//se encontrou verifica o dia
-					size_t i = str.find_last_of("-");
-					if (dia.compare(it->substr(i + 1)) == 0) {
-						contadorPinsDia++;
-					}
+			for (auto const& it : logList) { 
+				if (dia.compare(it) == 0) {
+					contadorPinsDia++;
+				}
+				else {
+					contadorPinsDia = 1;
 				}
 			}
 		}
+		else {
+			contadorPinsDia = 1;
+		}
 
 		//TODO: Salvar em arquivo de log o timestamp da inserção de numero 1 até a ultima (fazer isso no após cadastro do pin).
-		logList.push_front(str);
+		logList.push_front(dia);
 		return true;
 	}
 	return false;
