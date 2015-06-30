@@ -11,9 +11,9 @@
 
 int main()
 {
-    SistemaMapa sistema  =   SistemaMapa::getInstance();
+    SistemaMapa &sistema  =   SistemaMapa::getInstance();
     Usuario usuario("2000.128.60.8", 150.0, 60.0);
-    
+	inicializador();
     sistema.adicionarUsuario(usuario);
     
     menu(*sistema.getUsuarios().begin());
@@ -23,7 +23,7 @@ int main()
 void menu(Usuario &usuario)
 {
     int op = 0;
-    SistemaMapa sist =   SistemaMapa::getInstance();
+    SistemaMapa &sist =   SistemaMapa::getInstance();
     
     cout << "== Menu == " << endl;
     cout << "1. Inserir Pin ";
@@ -47,7 +47,7 @@ void menu(Usuario &usuario)
 
 void inicializador()
 {
-    SistemaMapa sistema  =   SistemaMapa::getInstance();
+    SistemaMapa &sistema  =   SistemaMapa::getInstance();
     sistema.setValidador(new EstrategiaDeValidacao());
     sistema.setRelatorio(new RelatorioApp());
 }
