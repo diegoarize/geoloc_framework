@@ -29,7 +29,10 @@ void menu(Usuario &usuario)
     while (cin >> op) {
         switch (op) {
             case 1: {
-                PinApp p(""+sist.pinIdGenerator);//gerando o id do pin
+				std::string id = "#" +sist.pinIdGenerator();//gerando o id do pin
+				PinApp p;
+				p.setId(id);
+				inserirDadosDoPin(&p, usuario);
                 sist.cadastrarPin(p);
                 break;
                 
@@ -54,7 +57,10 @@ void inicializador()
 void inserirDadosDoPin(PinApp *p, Usuario &u) {
 	double longitude, latitude;
 	int op;
-	std::string conteudo;
+
+	std::string conteudo, cidade;
+	cout << "cidade: " << endl;
+	cin >> cidade;
 	cout << "longitude: " << endl;
 	cin >> longitude;
 	cout << "Latitude: " << endl;
@@ -82,10 +88,14 @@ void inserirDadosDoPin(PinApp *p, Usuario &u) {
 
 	cout << "Conteudo: " << endl;
 	cin >> conteudo;
-	p->setUserIp(u.getIp);
+	p->setUserIp(u.getIp());
 	p->setLongitude(longitude);
 	p->setLatitude(latitude);
 	p->setConteudo(conteudo);
-	p->setDataDoCrime()
-}
+	//preferi abstrair isso do input e ja colocar como se o usuario cadastrasse quando ocorresse o crime.
+	p->setDataDoCrime(getDate());
+	p->setCidade(cidade);
 
+	//Adicionar o pin na lista do usuario
+	u.adicionarPin(p);
+}
