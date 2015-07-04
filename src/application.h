@@ -8,5 +8,5 @@
 
 void menu(Usuario &usuario);
 void inicializador();
-void inserirDadosDoPin(Pin *p, Usuario &u);
+void inserirDadosDoPin(PinApp *p);
 #endif

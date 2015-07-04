@@ -5,7 +5,6 @@
 #include "RelatorioApp.h"
 #include "EstrategiaDeValidacao.h"
 #include "SistemaMapa.h"
-#include "Usuario.h"
 
 
 int main()
@@ -32,7 +31,7 @@ void menu(Usuario &usuario)
 				std::string id = "#" +sist.pinIdGenerator();//gerando o id do pin
 				PinApp p;
 				p.setId(id);
-				inserirDadosDoPin(&p, usuario);
+				inserirDadosDoPin(&p);
                 sist.cadastrarPin(p);
                 break;
                 
@@ -54,7 +53,7 @@ void inicializador()
     sistema.setRelatorio(new RelatorioApp());
 }
 
-void inserirDadosDoPin(PinApp *p, Usuario &u) {
+void inserirDadosDoPin(PinApp *p) {
 	double longitude, latitude;
 	int op;
 
@@ -88,7 +87,7 @@ void inserirDadosDoPin(PinApp *p, Usuario &u) {
 
 	cout << "Conteudo: " << endl;
 	cin >> conteudo;
-	p->setUserIp(u.getIp());
+
 	p->setLongitude(longitude);
 	p->setLatitude(latitude);
 	p->setConteudo(conteudo);
@@ -96,6 +95,4 @@ void inserirDadosDoPin(PinApp *p, Usuario &u) {
 	p->setDataDoCrime(getDate());
 	p->setCidade(cidade);
 
-	//Adicionar o pin na lista do usuario
-	u.adicionarPin(p);
 }
