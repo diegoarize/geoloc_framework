@@ -14,7 +14,7 @@ public :
     double      getLat()  const  {return  latitude;}
     double      getLon()  const  {return  longitude;}
     std::list<Pin>   getPins() const  {return  pins;}
-    void        adicionarPin(Pin p);
+    void        adicionarPin(Pin *p);
     
 private :
     std::string ip;

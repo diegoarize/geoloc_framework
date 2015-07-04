@@ -4,7 +4,7 @@ using namespace std;
 
 void SistemaMapa::adicionarUsuario(const Usuario &u)
 {
-    listaUsuario.push_back(u);
+    listaUsuario.push_front(u);//insere na frente pra o usuario atual ser o do inicio de lista
 }
 
 bool SistemaMapa::cadastrarPin(const Pin &pin)
@@ -43,4 +43,9 @@ void SistemaMapa::setRelatorio(Relatorio *r)
 {
     delete relatorio;
     relatorio = r;
+}
+
+int SistemaMapa::pinIdGenerator()
+{
+	return ++pinCounter;
 }

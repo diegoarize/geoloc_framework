@@ -80,7 +80,6 @@
     <ClInclude Include="..\..\..\src\Conteudo.h" />
     <ClInclude Include="..\..\..\src\EstadoPin.h" />
     <ClInclude Include="..\..\..\src\EstrategiaDeValidacao.h" />
-    <ClInclude Include="..\..\..\src\ExibidorDeRel.h" />
     <ClInclude Include="..\..\..\src\FormularioDoPin.h" />
     <ClInclude Include="..\..\..\src\Mapa.h" />
     <ClInclude Include="..\..\..\src\Pin.h" />
@@ -89,6 +88,7 @@
     <ClInclude Include="..\..\..\src\RelatorioApp.h" />
     <ClInclude Include="..\..\..\src\SistemaMapa.h" />
     <ClInclude Include="..\..\..\src\Usuario.h" />
+    <ClInclude Include="..\..\..\src\util.h" />
     <ClInclude Include="..\..\..\src\ValidadorDoPin.h" />
   </ItemGroup>
   <ItemGroup>
@@ -96,7 +96,9 @@
     <ClCompile Include="..\..\..\src\EstrategiaDeValidacao.cpp" />
     <ClCompile Include="..\..\..\src\Mapa.cpp" />
     <ClCompile Include="..\..\..\src\PinApp.cpp" />
+    <ClCompile Include="..\..\..\src\Relatorio.cpp" />
     <ClCompile Include="..\..\..\src\SistemaMapa.cpp" />
+    <ClCompile Include="..\..\..\src\util.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -5,7 +5,7 @@
 class Relatorio {
 public :
     Relatorio() = default;
-    std::string gerarRelatorio()    const ;
+    void gerarRelatorio()    const ;
     virtual void exibirRelatorio()  const {};
 private :
     std::list<Relatorio> filtros;

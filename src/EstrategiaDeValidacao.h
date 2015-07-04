@@ -2,10 +2,8 @@
 #include "ValidadorDoPin.h"
 #include "Pin.h"
 #include <string>
-#include <fstream>
-#include <streambuf>
 #include <list>
-#include <time.h>
+#include "util.h"
 
 using namespace std;
 /**

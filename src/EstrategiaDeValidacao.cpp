@@ -7,15 +7,7 @@ bool EstrategiaDeValidacao::validarPin(const Pin &pin)
 	//TODO: Validar Pin somente se o numero de inserções for <=5 em um dia, verificando log.
 	if (contadorPinsDia < 5)
 	{
-		//TODO: transformar em função do util get date
-		time_t     now = time(0);
-		struct tm  tstruct;
-		char       buf[80];
-		tstruct = *localtime(&now);
-
-		strftime(buf, sizeof(buf), "%F", &tstruct); //yyyy-mm-dd
-		//TODO: transformar em função do util
-		string dia = buf;
+		string dia = getDate();
 		
 
 		if (!logList.empty())

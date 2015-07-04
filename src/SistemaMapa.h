@@ -33,6 +33,7 @@ class SistemaMapa {
     //inicializadores
     void setValidador(ValidadorDoPin *v);
     void setRelatorio(Relatorio *r);
+	int	 pinIdGenerator();
     
 private:
     SistemaMapa() {};
@@ -44,7 +45,7 @@ private:
     Mapa              mapa;
     Relatorio         *relatorio;
     bool  			  validadorDoPin(const Pin &formulario);
-    
+	int				 pinCounter = 0;
 };
 
 #endif
