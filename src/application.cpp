@@ -33,7 +33,8 @@ void menu(Usuario &usuario)
 		cin >> op;
         switch (op) {
             case 1: {
-				string id = "#" +sist.pinIdGenerator();//gerando o id do pin
+				int pinNumber = sist.pinIdGenerator();
+				string id = "#" + to_string(pinNumber);//gerando o id do pin
 				PinApp p;
 				p.setId(id);
 				inserirDadosDoPin(&p);
