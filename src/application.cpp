@@ -23,9 +23,12 @@ void menu(Usuario &usuario)
     int op = 0;
     SistemaMapa &sist =   SistemaMapa::getInstance();
     
-    cout << "== Menu == " << endl;
-    cout << "1. Inserir Pin ";
     while (cin >> op) {
+		cout << "== Menu == " << endl;
+		cout << "1. Inserir Pin " << endl;
+		cout << "2. Listar Pins " << endl;
+		cout << "3. Buscar Pin  no Mapa" << endl;
+		cout << "4. Gerar Relatorio " << endl;
         switch (op) {
             case 1: {
 				std::string id = "#" +sist.pinIdGenerator();//gerando o id do pin
@@ -34,8 +37,21 @@ void menu(Usuario &usuario)
 				inserirDadosDoPin(&p);
                 sist.cadastrarPin(p);
                 break;
-                
             }
+			case 2: {
+				//TODO: Listar Pins
+				break;
+			}
+			case 3: {
+				//TODO: Buscar determinado pin no mapa
+				//TODO: usar o getPin do Mapa.
+				//a busca com o id acho mais facil.
+				break;
+			}
+			case 4: {
+				//TODO: Gerar o Relatorio.
+				break;
+			}
             default:  {
                 std::cout << "Invalid input" << std::endl;
                 break;
