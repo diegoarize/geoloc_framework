@@ -23,15 +23,17 @@ void menu(Usuario &usuario)
     int op = 0;
     SistemaMapa &sist =   SistemaMapa::getInstance();
     
-    while (cin >> op) {
+    while (op != 5) {
 		cout << "== Menu == " << endl;
 		cout << "1. Inserir Pin " << endl;
 		cout << "2. Listar Pins " << endl;
 		cout << "3. Buscar Pin  no Mapa" << endl;
 		cout << "4. Gerar Relatorio " << endl;
+		cout << "5. Sair " << endl;
+		cin >> op;
         switch (op) {
             case 1: {
-				std::string id = "#" +sist.pinIdGenerator();//gerando o id do pin
+				string id = "#" +sist.pinIdGenerator();//gerando o id do pin
 				PinApp p;
 				p.setId(id);
 				inserirDadosDoPin(&p);
@@ -39,7 +41,7 @@ void menu(Usuario &usuario)
                 break;
             }
 			case 2: {
-				//TODO: Listar Pins
+				listarPins(sist.listarPins());
 				break;
 			}
 			case 3: {
@@ -73,7 +75,7 @@ void inserirDadosDoPin(PinApp *p) {
 	double longitude, latitude;
 	int op;
 
-	std::string conteudo, cidade;
+	string conteudo, cidade;
 	cout << "cidade: " << endl;
 	cin >> cidade;
 	cout << "longitude: " << endl;
@@ -111,4 +113,17 @@ void inserirDadosDoPin(PinApp *p) {
 	p->setDataDoCrime(getDate());
 	p->setCidade(cidade);
 
+}
+
+void listarPins(list<Pin> &pins)
+{
+	if (pins.size() > 0)
+	{
+		for (auto const& it : pins) {
+			cout << it.getId() << endl;
+		}
+	}
+	else {
+		cout << "Lista de pins vazia" << endl;
+	}
 }

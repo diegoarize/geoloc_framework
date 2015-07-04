@@ -1,6 +1,11 @@
 #include "SistemaMapa.h"
 
-using namespace std;
+
+
+list<Pin> SistemaMapa::listarPins()
+{
+	return mapa.getListaPins();
+}
 
 void SistemaMapa::adicionarUsuario(const Usuario &u)
 {
@@ -16,13 +21,14 @@ bool SistemaMapa::cadastrarPin(const Pin &pin)
     if(validador -> validarPin(pin)) {
         
         // aqui precisamos das informacoes do usuario que cadastrou este pin!
-        //TODO: Mostrar id do pin cadastrado
-		cout << "Pin cadastrado" << endl;
+
+		cout << pin.getId() +"Pin cadastrado" << endl;
+		//inserir pin no Mapa.
+		mapa.inserirPin(pin);
         return true;
     }
     else {
-		//TODO: Mostrar id do pin cadastrado
-		cout << "Pin nao cadastrado" << endl;
+		cout << pin.getId() + "Pin nao cadastrado" << endl;
         //TODO: Caso contr?rio retornar erro.
         return false;
     }

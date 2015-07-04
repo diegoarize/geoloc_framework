@@ -15,9 +15,7 @@ using namespace std;
 class SistemaMapa {
     
     public :
-    //TODO: Criar um metodo main pra ser o inicializador da aplicação(talvez numa classe main)
-    //e isso instancia o Singleton e faz chamadas de input
-    list<Pin>  &listarPins();
+    list<Pin>  listarPins();
     void  adicionarUsuario(const Usuario &u);
     bool  cadastrarPin(const Pin &pin);
     void  exibirRelatorio();
