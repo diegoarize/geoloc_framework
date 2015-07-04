@@ -46,9 +46,19 @@ void menu(Usuario &usuario)
 				break;
 			}
 			case 3: {
-				//TODO: Buscar determinado pin no mapa
-				//TODO: usar o getPin do Mapa.
-				//a busca com o id acho mais facil.
+				string id;
+				
+				cout << "id do pin: ";
+				cin >> id;
+				const Pin* pin =  sist.buscarPin(id);
+				const PinApp* p = static_cast<const PinApp*>(pin);
+
+				cout << "cidade: " + p->getCidade() << endl;
+				cout << "longitude: " + to_string(p->getLongitude()) << endl;
+				cout << "Latitude: " + to_string(p->getLatitude()) << endl;
+				cout << "Tipo de crime: " + p->getTipoDeCrime() << endl;
+				cout << "Descricao: " + p->getConteudo() << endl;
+				
 				break;
 			}
 			case 4: {

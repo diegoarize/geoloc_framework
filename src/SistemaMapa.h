@@ -32,6 +32,8 @@ class SistemaMapa {
     void setValidador(ValidadorDoPin *v);
     void setRelatorio(Relatorio *r);
 	int	 pinIdGenerator();
+
+	const Pin* buscarPin(string id);
     
 private:
     SistemaMapa() {};

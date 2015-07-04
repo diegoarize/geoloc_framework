@@ -55,3 +55,8 @@ int SistemaMapa::pinIdGenerator()
 {
 	return ++pinCounter;
 }
+
+const Pin * SistemaMapa::buscarPin(string id)
+{
+	return mapa.getPin(id);
+}

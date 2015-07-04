@@ -18,7 +18,9 @@ public  :
     double    getCLongitude() const { return centerLongitude; }
     int       getZoom()       const { return zoom; }
     std::list<Pin> getListaPins()  const { return pinList; }
-    std::list<Pin>::const_iterator  getPin(const std::string &pinId) const;
+    std::list<Pin>::const_iterator  _getPin(const std::string &pinId) const;
+
+	const Pin*	  getPin(const std::string &pinId);
     
 private :
     int        titulo = 0;
