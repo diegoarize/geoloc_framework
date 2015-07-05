@@ -53,10 +53,10 @@ void menu(Usuario &usuario)
 				const Pin* pin =  sist.buscarPin(id);
 				const PinApp* p = static_cast<const PinApp*>(pin);
 
-				cout << "cidade: " + p->getCidade() << endl;
+				//cout << "cidade: " + p->getCidade() << endl;
 				cout << "longitude: " + to_string(p->getLongitude()) << endl;
 				cout << "Latitude: " + to_string(p->getLatitude()) << endl;
-				cout << "Tipo de crime: " + p->getTipoDeCrime() << endl;
+				//cout << "Tipo de crime: " + p->getTipoDeCrime() << endl;
 				cout << "Descricao: " + p->getConteudo() << endl;
 				
 				break;
@@ -86,7 +86,8 @@ void inserirDadosDoPin(PinApp *p) {
 	double longitude, latitude;
 	int op;
 
-	string conteudo, cidade;
+	string conteudo;
+	string cidade;
 	cout << "cidade: " << endl;
 	cin >> cidade;
 	cout << "longitude: " << endl;
