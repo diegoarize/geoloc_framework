@@ -34,6 +34,11 @@ bool SistemaMapa::cadastrarPin(const Pin &pin)
     }
 }
 
+void SistemaMapa::exibirRelatorio()
+{
+	relatorio->gerarRelatorio();
+}
+
 bool SistemaMapa::validadorDoPin(const Pin &pin)
 {
     return validador -> validarPin(pin);

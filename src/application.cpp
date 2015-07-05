@@ -53,6 +53,7 @@ void menu(Usuario &usuario)
 				const Pin* pin =  sist.buscarPin(id);
 				const PinApp* p = static_cast<const PinApp*>(pin);
 
+				//TODO: Temos que resolver essa parte, talvez usando PinApp dentro do framework, como fazemos com os outros
 				//cout << "cidade: " + p->getCidade() << endl;
 				cout << "longitude: " + to_string(p->getLongitude()) << endl;
 				cout << "Latitude: " + to_string(p->getLatitude()) << endl;
@@ -62,7 +63,7 @@ void menu(Usuario &usuario)
 				break;
 			}
 			case 4: {
-				//TODO: Gerar o Relatorio.
+				sist.exibirRelatorio();
 				break;
 			}
             default:  {
